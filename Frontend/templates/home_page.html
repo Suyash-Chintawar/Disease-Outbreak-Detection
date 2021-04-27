@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home Page</title>
+
+    <!-- Use of external css -->
+    <link rel="stylesheet" href="../static/styles/style-home.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="header-div1">
+                
+                <div class="header-left">
+                    <img src="../static/images/full_logo.png" width="400px">
+                </div>
+
+            </div>
+
+            <div class="header-div2">
+                <div class="menu-item" onclick="location.href = '/home'">
+                    HOME
+                </div>
+
+                <div class="menu-item" onclick="location.href = '/about'">
+                    ABOUT US
+                </div>
+            </div>
+
+        </header>
+
+        <main>
+
+            <!-- Image Slider -->
+            <div class="image-slider">
+                <div class="slide fade">
+                    <img src="../static/images/image_slider1.jpg" width="100%">
+                    <div class="slider-text">Revolutionising health care sector with statistics and computation</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="../static/images/image_slider2.jpg" width="100%">
+                    <div class="slider-text">Machine learning is the key to the to future!</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="../static/images/image_slider3.jpg" width="100%">
+                    <div class="slider-text">Implementing medical plans after proper statistical analysis leads to guaranteed success</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="../static/images/image_slider4.jpg" width="100%">
+                    <div class="slider-text">Integrating technology with health care- and absolute necessity</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="../static/images/image_slider5.jpg" width="100%">
+                    <div class="slider-text">Stay safe!</div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <a class="previous-slide" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next-slide" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+            </div>
+
+            <div class="content">
+
+                <div class="heading">
+                    Overview
+                </div><hr>
+
+                <p>
+                    Outbreak of infectious diseases can have significant impact on individual health, national economies, and social well-being. Not only can such outbreaks cause huge social and economic disruption, but also, they can lead to massive losses of lives and resources. Outbreak of infectious diseases such as dengue, zika, ebola etc. have already caused massive losses to countries all over the globe. The recent pandemic of COVID 19 has also devastated the economies of many nations and overburdened healthcare systems all over the world due to its highly contagious nature. 
+                </p>
+
+                <p>
+                    Early detection of infectious diseases plays a crucial role in all treatment and prevention strategies. Rapid and accurate identification of the underlying agent (the bacterium or virus) using diagnostic testing is essential to select the correct control measure, such as containment, confinement, antimicrobials and vaccines. This is particularly true for emerging diseases, where we find ourselves in a race to develop new controls as the disease spreads. In an outbreak situation, vigilant monitoring is vital to inform us where to focus effort and assess the effectiveness of interventions. Early detection of infectious diseases also gives researchers ample time to create effective vaccines and drugs to slow down and eventually prevent the transmission of diseases. 
+                </p>
+
+                <p>
+                    Worldwide, however, many infections remain undetected. Due to poor diagnostic tools, infections are often undiagnosed and therefore untreated, or diagnosed at a later stage when treatments become less effective. This results in continued transmission of serious infections and results in delay in the identification of emerging threats, for example pandemic influenza, leading to major human and economic consequences for millions of people.
+                </p>
+
+                <p>
+                    Disease Outbreak Detection System is a deep learning based system which can be used to identify and detect diseases at an early stage by using tweets extracted from Twitter related to the concerned diseases. The system automatically extracts latest tweets on a particular disease, feed the tweets into a trained deep learning network and then filters the tweets which are related to outbreaks of that particular disease. Then the system gathers various statistics about the transmission of the disease and generates plots using the gathered data. These plots can then be used to get an idea about the magnnitude of the outbreak of the disease in various countries all around the globe.
+                </p>
+
+                <br><br>
+
+                <div class="heading">
+                    View Statistics
+                </div><hr>
+
+                <div class="disease-tiles" onclick="location.href = '/statistics/dengue'">
+                    Dengue<br>
+
+                    <p style="font-size: 14px; text-align: center;">View all generated Statistics about Dengue!</p>
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer>
+            Thanks for visiting aur web page! We hope it was a smooth and helpful experience!
+        </footer>
+
+    </div>
+
+    <script src="../static/scripts/script-home.js" defer></script>
+</body>
+
+</html>

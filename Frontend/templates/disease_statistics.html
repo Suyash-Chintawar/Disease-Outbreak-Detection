@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Disease Statistics</title>
+
+    <!-- Use of external css -->
+    <link rel="stylesheet" href="../static/styles/style-disease_statistics.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="header-div1">
+                
+                <div class="header-left">
+                    <img src="../static/images/full_logo.png" width="400px">
+                </div>
+
+            </div>
+
+            <div class="header-div2">
+                <div class="menu-item" onclick="location.href = '/home'">
+                    HOME
+                </div>
+
+                <div class="menu-item"  onclick="location.href = '/about'">
+                    ABOUT US
+                </div>
+            </div>
+
+            <div class="header-div3">
+                {{ disease_name.upper() }}
+            </div>
+
+        </header>
+
+        <main>
+
+            <div class="nav">
+                
+                <div class="nav-item"  onclick="location.href= '#about'">
+                    About the disease
+                </div>
+
+                <div class="nav-item" onclick="location.href= '#statistics'">
+                    Statistics
+                </div>
+
+                <div class="nav-item" onclick="location.href= '#transmission-prevention'">
+                    Transmission and Prevention
+                </div>
+
+            </div>
+
+            <div class="content">
+                        
+                <div id="about">
+                    <div class="heading">
+                        About the disease
+                    </div><hr>
+
+                    <div class="image-holder">
+                        <img src="../static/images/{{ disease_name.lower() }}/image1.jpg" width="100%">
+                    </div>
+
+                    {% for paragraph in about_disease %}
+                        <p>{{ paragraph }}</p>
+                    {% endfor %}
+
+                    <br><br>
+    
+                </div>
+
+                <div id="statistics">
+
+                    <div class="heading">
+                        Statistics
+                    </div><hr>
+
+                    <p>This section displays various statistics and analytics created by the outbreak detection system for {{ disease_name }} disease. This involves displaying data retrieved by our outbreak detection system in the form of graphs and maps. The system retrieves a fixed number of latest tweets related to {{ disease_name }} disease and then filters all those tweets which contain legit information about an outbreak of {{ disease_name }} in some part of the world. This is done using a deep learning model which has been trained to classify whether a given tweet is relevant or not. Finally locations are extracted from the filtered tweeets and the statistics are prepared using these extracted locations.</p>
+
+                    <p>The first plot gives an idea about the magnitude of {{ disease_name }} outbreak in various countries all around the globe. Higher the intensity of the colour of a country, Higher is the chance that the country is facing a {{ disease_name }} outbreak. This gives us a idea about which countries are currently affected by {{ disease_name }} and what is the magnitude of risk of a pandemic that each affected country is facing. The displayed world map is completely interactive and shows the number of relevant tweets corresponding to each affected country when the mouse pointer hovers over an affected country.</p>
+
+                    <div class="image-holder">
+                        <object type="image/svg+xml" data="../static/stats/map.svg"></object>
+                    </div>
+    
+                    <br><br>
+                    <p>The second plot shows the top 10 countries which are at a risk of facing a {{ disease_name }} pandemic. This plot gives an idea about the current {{ disease_name }} hotspots all over the world. This can also be helpful to compare the risk of {{ disease_name }} pandemic in the countries with maximum number of dengue cases. Again the plot is completely interactive and the number of relevant tweets for the selected affected country will be displayed whenever the mouse pointer hovers over a bar corresponding to an affected country.</p>
+                    <br>
+
+                    <div class="image-holder">
+                        <object type="image/svg+xml" data="../static/stats/graph.svg"></object>
+                    </div>
+                    
+                    <br><br>
+
+                </div>
+
+                <div id="transmission-prevention">
+
+                    <div class="heading">
+                        Transmission and Prevention
+                    </div><hr>
+
+                    <p> {{ disease_transmission }}</p>
+
+                    <br><br>
+
+                    <div class="image-holder">
+                        <img src="../static/images/{{ disease_name.lower() }}/image2.jpg" width="100%">
+                    </div>
+
+                    <br><br>
+                    
+                    <p>Some of the effective prevention methods for {{ disease_name }} disease are: </p>
+                    <ul>
+                        {% for key, value in disease_prevention.items() %}
+                            <li > <b>{{key}}</b> <br> {{value}} </li><br>
+                        {% endfor %}
+                    </ul>
+
+                    <br><br>
+         
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer>
+            Thanks for visiting aur web page! We hope it was a smooth and helpful experience!
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
